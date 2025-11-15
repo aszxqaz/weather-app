@@ -35,7 +35,7 @@ const userDisplayTime = computed(() => timeService.formatToUser(time));
   <h1 class="font-semibold text-lg mb-4">
     {{ locationDisplayName }}
   </h1>
-  <div class="grid auto-cols-max grid-flow-col gap-4 items-center">
+  <div class="flex flex-wrap items-center gap-x-4">
     <p>Weather data on:</p>
     <div class="grid">
       <div class="flex items-center gap-2">

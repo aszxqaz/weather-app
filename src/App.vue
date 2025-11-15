@@ -44,15 +44,17 @@ const searchOptions = computed(() => {
 <template>
   <div class="min-h-screen bg-blue-50">
     <Header :loading="locationStore.loading || weatherStore.loading">
-      <SearchInput
-        placeholder="City"
-        v-model:query="query"
-        v-model:value="locationStore.currentLocation"
-        :options="searchOptions"
-        :display-value="(location) => `${location.name}, ${location.country}`"
-      />
+      <div class="max-w-100">
+        <SearchInput
+          placeholder="City"
+          v-model:query="query"
+          v-model:value="locationStore.currentLocation"
+          :options="searchOptions"
+          :display-value="(location) => `${location.name}, ${location.country}`"
+        />
+      </div>
     </Header>
-    <main class="pt-4 pb-12">
+    <main class="pt-6 pb-12">
       <div class="constrained">
         <div v-if="locationStore.error || weatherStore.error" class="mb-4">
           <p v-if="locationStore.error" class="text-red-500">
